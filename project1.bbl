@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{SVM}
+C.~Cortes and V.~Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine learning}, 20(3):273--297, 1995.
+
+\end{thebibliography}
