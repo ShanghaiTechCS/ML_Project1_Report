@@ -16,10 +16,10 @@ So we can rewrite the loss function as:
     loss_{reg}(y,x) = loss(y, x) + \lambda W^TW
 \end{equation}
 Here we will explore the influence of regularization strength terms. 
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\linewidth]{img/acc_bs1_total_smote.png}
-    
+    \includegraphics[width=1\linewidth]{img/f1_score_bs1_lg_smote.png}
+    \caption{The F1 scores via different $\lambda$}
 \end{figure}
 We can see that when we set $\lambda=0.189$ to get the best perfermances.
 
@@ -31,7 +31,19 @@ The intuition of SVM\cite{SVM} is to manimize the margin, which can get more bet
 \end{align}
 
 In genearlly, the data cannot be seperated in limited dimension. So we can map the data to high dimension to let it be sepearted. So we can use some kernel tricks to get better perfermances. There are several kernel function,so we will give some comparision for different kernel function.
-\textbf{to post some figure in kernel function}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{img/f1_score_bs1_svm_rbf_smote.png}
+    \caption{The Guassian kernel}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{img/f1_score_bs1_svm_poly_smote.png}
+    \caption{The Polynomial kernel}
+\end{figure}
+
+We can see that the Gaussion kernel can get better perfermances than polynomial kernel. Because the gaussion can map the data to infinte space.
 
 \subsection{Decision Tree}
 The decision tree can provide a explainable model to solve problems. In this taks we have different attributes in total. We can compute the information gain to get the split results.
@@ -43,6 +55,13 @@ In some degree, information gain can solve most of problems.But when we have lot
     &Gain\_ratio(D, a) = \frac{Gain(D,a)}{IV(a)}\\
     &IV(a) = -\sum_{v=1}^{V} \frac{|D^v|}{|D|} \log\frac{|D^v|}{|D|}
 \end{align}
-we always choose the most gain ratio to be our nodes. There are lost of parameters in decision tree, we will give the influence of tree depth.
+we always choose the most gain ratio to be our nodes. There are lost of parameters in decision trees.
 
-% pic
+In the end, we conclude three different  methods by their AUC scores.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{img/myplot.png}
+    \caption{AUC}
+\end{figure}
+
+We can see from the figure, the logistic regression model can get the best perfermances. 
