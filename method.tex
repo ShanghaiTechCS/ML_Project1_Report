@@ -16,8 +16,12 @@ So we can rewrite the loss function as:
     loss_{reg}(y,x) = loss(y, x) + \lambda W^TW
 \end{equation}
 Here we will explore the influence of regularization strength terms. 
-
-We can see that when we set $\lambda=10$ to get the best perfermances.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{img/acc_bs1_total_smote.png}
+    
+\end{figure}
+We can see that when we set $\lambda=0.189$ to get the best perfermances.
 
 \subsection{SVM}
 The intuition of SVM\cite{SVM} is to manimize the margin, which can get more better generalization powers. Let's see mathematical equations in SVM.
